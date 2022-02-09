@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+h2 {
+  font-size: 18px;
+  line-height: 110%;
+  font-weight: 600;
+}
+
+.wraper {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000000;
+  font-weight: 500;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  z-index: 0;
+}
+
+.game {
+  z-index: 1;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 498px) {
+  .game {
+    display: block;
+  }
+}
+
+.game__info {
+  margin-right: 80px;
+}
+
+@media (max-width: 598px) {
+  .game__info {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 498px) {
+  .game__info {
+    margin: 0px 0px 30px 0px;
+  }
+}
+
+.info__menu-btn {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 25%;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.info__score {
+  margin-bottom: 15px;
+}
+
+.info__title {
+  margin-bottom: 10px;
+}
+
+.info__statistic :not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.info__score-result span {
+  margin-left: 5px;
+}
+
+.info__move {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.info__move span {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 5px;
+  color: aliceblue;
+}
+
+.info__menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.menu {
+  padding: 30px;
+  width: 280px;
+  color: aliceblue;
+  border-radius: 10px;
+  background-color: #000000;
+  -webkit-box-shadow: black 3px 4px 8px 3px;
+          box-shadow: black 3px 4px 8px 3px;
+}
+
+.menu__rival {
+  margin-bottom: 20px;
+}
+
+.menu__rival-title {
+  margin-bottom: 10px;
+}
+
+.menu__rival-btn {
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.menu__rival-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu__move-title {
+  margin-bottom: 10px;
+}
+
+.menu__move-btn {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.menu__move-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.board {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.board__cell {
+  width: 33.333%;
+  padding-bottom: 33.333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25%;
+  font-family: "Roboto", sans-serif;
+}
+
+.contacts {
+  display: none;
+  background-color: #ee9292;
+}
+
+.contacts :not(:last-child) {
+  margin-right: 20%;
+}

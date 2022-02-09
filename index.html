@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tic Tac Toe</title>
+	<link rel="shortcut icon" href="./assets/img/favicon.ico" type="imag/x-icon">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div class="wraper">
+		<img class="background" src="./assets/img/bg.jpg" alt="">
+		<div class="game">
+			<div class="game__info info">
+				<button class="info__menu-btn">☰</button>
+				<div class="info__score">
+					<h2 class="info__title">Score:</h2>
+					<div class="info__statistic">
+						<p id="score-x" class="info__score-result">X:<span>0</span></p>
+						<p id="score-o" class="info__score-result">O:<span>0</span></p>
+						<p id="score-draw" class="info__score-result">Draw:<span>0</span></p>
+					</div>
+				</div>
+				<div class="info__move">Is now moving:<span>x</span></div>
+				<!-- меню скрыто по умолчанию -->
+				<div class="info__menu menu">
+					<div class="menu__rival">
+						<h2 class="menu__rival-title">Choose rival:</h2>
+						<div class="menu__rival-btns">
+							<button class="menu__rival-btn">computer</button>
+							<button class="menu__rival-btn">person</button>
+						</div>
+					</div>
+					<div class="menu__move">
+						<h2 class="menu__move-title">Next Round Go First or Second?</h2>
+						<div class="menu__move-btns">
+							<button class="menu__move-btn">1st</button>
+							<button class="menu__move-btn">2st</button>
+						</div>
+					</div>
+					<button class="menu__close-btn"></button>
+				</div>
+			</div>
+			<div class="game__board board">
+				<div class="board__cell" data-ind="1"></div>
+				<div class="board__cell" data-ind="2"></div>
+				<div class="board__cell" data-ind="3"></div>
+				<div class="board__cell" data-ind="4"></div>
+				<div class="board__cell" data-ind="5"></div>
+				<div class="board__cell" data-ind="6"></div>
+				<div class="board__cell" data-ind="7"></div>
+				<div class="board__cell" data-ind="8"></div>
+				<div class="board__cell" data-ind="9"></div>
+			</div>
+		</div>
+		<div class="contacts">
+			<a href="" class="contacts__link">
+				<img src="./assets/img/rs_school_js.svg" alt="school's link">
+			</a>
+			<a href="" class="contacts__link">Another projects</a>
+		</div>
+	</div>
+</body>
+<script src="./js/script.js"></script>
+
+</html>
