@@ -102,6 +102,13 @@ h2 {
 
 .wraper {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -139,6 +146,7 @@ h2 {
 @media (max-width: 498px) {
   .game {
     display: block;
+    top: 45%;
   }
 }
 
@@ -155,21 +163,39 @@ h2 {
 @media (max-width: 498px) {
   .game__info {
     margin: 0px 0px 30px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .game__info :not(:last-child) {
+    margin-right: 10px;
   }
 }
 
 .info__menu-btn {
   padding: 15px;
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 25%;
   font-size: 24px;
   font-weight: 600;
   color: #000000;
 }
 
+.info__menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .info__score {
   margin-bottom: 15px;
+}
+
+@media (max-width: 498px) {
+  .info__score {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .info__title {
@@ -189,6 +215,11 @@ h2 {
   font-weight: 600;
 }
 
+.info__move.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .info__move span {
   text-transform: uppercase;
   font-weight: 500;
@@ -203,6 +234,10 @@ h2 {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.info__menu.active {
+  display: block;
 }
 
 .menu {
@@ -225,22 +260,30 @@ h2 {
 
 .menu__rival-btn {
   text-transform: uppercase;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
 }
 
-.menu__rival-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.menu__rival-btn.active {
+  border: 1px solid aliceblue;
+}
+
+.menu__move.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu__move-title {
   margin-bottom: 10px;
 }
 
-.menu__move-btn {
+.menu__move-btn.active {
+  border: 1px solid aliceblue;
+}
+
+.menu__close-btn {
+  margin-top: 10px;
+}
+
+.btns-menu {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -248,7 +291,7 @@ h2 {
   transition: 0.2s ease;
 }
 
-.menu__move-btn:hover {
+.btns-menu:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -262,26 +305,61 @@ h2 {
 }
 
 .board__cell {
+  font-size: 18px;
+  font-weight: 700;
   width: 33.333%;
-  padding-bottom: 33.333%;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.3);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 25%;
-  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.board__cell.win {
+  background: #00ffff4a;
+}
+
+.board__cell:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .contacts {
-  display: none;
-  background-color: #ee9292;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacts__school {
+  position: relative;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.contacts__projects {
+  font-size: 32px;
+  font-weight: 600;
+  color: wheat;
 }
 
 .contacts :not(:last-child) {

@@ -6,6 +6,8 @@ h2 {
 }
 .wraper {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 	width: 100vw;
 	overflow: hidden;
@@ -34,6 +36,7 @@ h2 {
 	transform: translate(-50%, -50%);
 	@media (max-width: 498px) {
 		display: block;
+		top: 45%;
 	}
 
 	&__info {
@@ -44,6 +47,10 @@ h2 {
 
 		@media (max-width: 498px) {
 			margin: 0px 0px 30px 0px;
+			display: flex;
+			:not(:last-child) {
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -54,15 +61,21 @@ h2 {
 	&__menu-btn {
 		padding: 15px;
 		margin-bottom: 20px;
-		background-color: rgba(255, 255, 255, 0.4);
+		background-color: rgba(255, 255, 255, 0.3);
 		border-radius: 25%;
 		font-size: 24px;
 		font-weight: 600;
 		color: #000000;
 	}
+	&__menu-btn:hover {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
 
 	&__score {
 		margin-bottom: 15px;
+		@media (max-width: 498px) {
+			display: flex;
+		}
 	}
 	&__title {
 		margin-bottom: 10px;
@@ -82,6 +95,10 @@ h2 {
 		font-size: 16px;
 		font-weight: 600;
 	}
+	&__move.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
 	&__move span {
 		text-transform: uppercase;
 		font-weight: 500;
@@ -91,11 +108,13 @@ h2 {
 
 	&__menu {
 		display: none;
-		// opacity: 0;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+	&__menu.active {
+		display: block;
 	}
 }
 .menu {
@@ -118,16 +137,15 @@ h2 {
 
 	&__rival-btn {
 		text-transform: uppercase;
-		padding: 15px;
-		background-color: rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		transition: 0.2s ease;
-	}
-	&__rival-btn:hover {
-		background-color: rgba(255, 255, 255, 0.2);
 	}
 
-	&__move {
+	&__rival-btn.active {
+		border: 1px solid aliceblue;
+	}
+
+	&__move.hidden {
+		opacity: 0;
+		visibility: hidden;
 	}
 
 	&__move-title {
@@ -137,39 +155,68 @@ h2 {
 	&__move-btns {
 	}
 
-	&__move-btn {
-		padding: 15px;
-		background-color: rgba(255, 255, 255, 0.1);
-		border-radius: 10px;
-		transition: 0.2s ease;
-	}
-	&__move-btn:hover {
-		background-color: rgba(255, 255, 255, 0.2);
+	&__move-btn.active {
+		border: 1px solid aliceblue;
 	}
 
 	&__close-btn {
+		margin-top: 10px;
 	}
 }
+.btns-menu {
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	transition: 0.2s ease;
+}
+.btns-menu:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 .board {
 	width: 300px;
 	display: flex;
 	flex-wrap: wrap;
 	&__cell {
+		font-size: 18px;
+		font-weight: 700;
 		width: 33.333%;
-		padding-bottom: 33.333%;
+		height: 100px;
 		display: flex;
-		border: 1px solid rgba(0, 0, 0, 0.3);
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		background: rgba(255, 255, 255, 0.2);
 		border-radius: 25%;
-		font-family: "Roboto", sans-serif;
+		cursor: pointer;
+		transition: 0.2s ease;
+	}
+	&__cell.win {
+		background: #00ffff4a;
+	}
+
+	&__cell:hover {
+		background: rgba(255, 255, 255, 0.4);
 	}
 }
 .contacts {
-	display: none;
-	background-color: rgb(238, 146, 146);
-	&__link {
+	padding: 20px 0;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	&__school {
+		position: relative;
+		width: 200px;
+		margin-right: 10px;
+	}
+	&__projects {
+		font-size: 32px;
+		font-weight: 600;
+		color: wheat;
 	}
 }
 .contacts :not(:last-child) {

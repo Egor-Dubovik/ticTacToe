@@ -19,48 +19,48 @@
 				<div class="info__score">
 					<h2 class="info__title">Score:</h2>
 					<div class="info__statistic">
-						<p id="score-x" class="info__score-result">X:<span>0</span></p>
-						<p id="score-o" class="info__score-result">O:<span>0</span></p>
-						<p id="score-draw" class="info__score-result">Draw:<span>0</span></p>
+						<p class="info__score-result">X:<span id="score-X">0</span></p>
+						<p class="info__score-result">O:<span id="score-O">0</span></p>
+						<p class="info__score-result">Draw:<span id="score-draw">0</span></p>
 					</div>
 				</div>
-				<div class="info__move">Is now moving:<span>x</span></div>
+				<div class="info__move hidden">Is now moving:<span>x</span></div>
 				<!-- меню скрыто по умолчанию -->
-				<div class="info__menu menu">
+				<div class="info__menu menu active">
 					<div class="menu__rival">
 						<h2 class="menu__rival-title">Choose rival:</h2>
 						<div class="menu__rival-btns">
-							<button class="menu__rival-btn">computer</button>
-							<button class="menu__rival-btn">person</button>
+							<button class="menu__rival-btn btns-menu active" id="PC">computer</button>
+							<button class="menu__rival-btn btns-menu" id="PR">person</button>
 						</div>
 					</div>
-					<div class="menu__move">
+					<div class="menu__move active">
 						<h2 class="menu__move-title">Next Round Go First or Second?</h2>
 						<div class="menu__move-btns">
-							<button class="menu__move-btn">1st</button>
-							<button class="menu__move-btn">2st</button>
+							<button class="menu__move-btn btns-menu active" id="first">1st</button>
+							<button class="menu__move-btn btns-menu" id="second">2st</button>
 						</div>
 					</div>
-					<button class="menu__close-btn"></button>
+					<button class="menu__close-btn btns-menu">Close</button>
 				</div>
 			</div>
 			<div class="game__board board">
-				<div class="board__cell" data-ind="1"></div>
-				<div class="board__cell" data-ind="2"></div>
-				<div class="board__cell" data-ind="3"></div>
-				<div class="board__cell" data-ind="4"></div>
-				<div class="board__cell" data-ind="5"></div>
-				<div class="board__cell" data-ind="6"></div>
-				<div class="board__cell" data-ind="7"></div>
-				<div class="board__cell" data-ind="8"></div>
-				<div class="board__cell" data-ind="9"></div>
+				<div class="board__cell" data-index="0"></div>
+				<div class="board__cell" data-index="1"></div>
+				<div class="board__cell" data-index="2"></div>
+				<div class="board__cell" data-index="3"></div>
+				<div class="board__cell" data-index="4"></div>
+				<div class="board__cell" data-index="5"></div>
+				<div class="board__cell" data-index="6"></div>
+				<div class="board__cell" data-index="7"></div>
+				<div class="board__cell" data-index="8"></div>
 			</div>
 		</div>
 		<div class="contacts">
-			<a href="" class="contacts__link">
+			<a target="_blank" href="https://rs.school/" class="contacts__school">
 				<img src="./assets/img/rs_school_js.svg" alt="school's link">
 			</a>
-			<a href="" class="contacts__link">Another projects</a>
+			<a target="_blank" href="https://github.com/Egor-Dubovik" class="contacts__projects">Another projects</a>
 		</div>
 	</div>
 </body>
